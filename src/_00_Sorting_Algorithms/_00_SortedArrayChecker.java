@@ -40,6 +40,10 @@ public class _00_SortedArrayChecker {
 	// (You can compare characters just like integers)
 
 	// 4. Write a static method called stringArraySorted.
+	static boolean stringArraySorted(String[] strings) {
+		// if(strings[0])
+		return false;
+	}
 	// This method takes in an array of Strings
 	// and it returns a boolean.
 	// The method returns true if the String
