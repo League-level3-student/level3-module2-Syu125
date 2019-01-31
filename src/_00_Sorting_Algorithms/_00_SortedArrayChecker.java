@@ -1,6 +1,8 @@
 package _00_Sorting_Algorithms;
 
 public class _00_SortedArrayChecker {
+	static String s = "";
+
 	// 1. Write a static method called intArraySorted.
 	static boolean intArraySorted(int[] integers) {
 		if (integers[0] < integers[integers.length - 1]) {
@@ -40,9 +42,18 @@ public class _00_SortedArrayChecker {
 	// (You can compare characters just like integers)
 
 	// 4. Write a static method called stringArraySorted.
+
 	static boolean stringArraySorted(String[] strings) {
-		// if(strings[0])
-		return false;
+		// s.compare
+		for (int i = 0; i < strings.length; i++) {
+			if (i < strings.length - 1) {
+				if (strings[i].compareToIgnoreCase(strings[i + 1]) > 0) {
+					return false;
+				}
+			}
+		}
+
+		return true;
 	}
 	// This method takes in an array of Strings
 	// and it returns a boolean.
