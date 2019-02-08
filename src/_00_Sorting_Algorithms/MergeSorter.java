@@ -23,6 +23,7 @@ public class MergeSorter extends Sorter {
 		// 2. make an if statement that checks if low is less than high
 		// and put the rest of the method inside of it
 		if (low < high) {
+			display.updateDisplay();
 
 			// 3. Create an integer called middle and set it
 			// equal to the half way point between low and high
@@ -33,7 +34,7 @@ public class MergeSorter extends Sorter {
 			mergeSort(array, middle + 1, high, display);
 			// 6. copy the elements from the array into the temporary array,
 			// but only the elements from low to high inclusive
-			for (int i = low; i < high+1; i++) {
+			for (int i = low; i < high + 1; i++) {
 				a[i] = array[i];
 			}
 			// 7. create three integers called i, j, and k and
@@ -51,12 +52,16 @@ public class MergeSorter extends Sorter {
 					array[k] = a[i];
 					// 11. increase i by 1
 					i += 1;
+					display.updateDisplay();
+
 				} // 13. else
 				else {
 					// 14. set array at k equal to temp array at j
 					array[k] = a[j];
 					// 15. increase j by 1
 					j += 1;
+					display.updateDisplay();
+
 				}
 				// 16. increase k by 1
 				k += 1;
@@ -68,6 +73,8 @@ public class MergeSorter extends Sorter {
 				// 19. increase k and i by 1
 				k += 1;
 				i += 1;
+				display.updateDisplay();
+
 			}
 			display.updateDisplay();
 		}
