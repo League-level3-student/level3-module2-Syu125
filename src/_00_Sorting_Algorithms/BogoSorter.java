@@ -30,9 +30,14 @@ public class BogoSorter extends Sorter {
 			if (a > array[i]) {
 				order = false;
 				System.out.println(a + " " + array[i]);
+			}else {
+				order = true;
 			}
+			
 		}
-
+		if(order ==true) {
+			sort(array,display);
+		}
 		if (order == false) {
 			int value = array.length;
 			int num = r.nextInt(value);
@@ -43,6 +48,7 @@ public class BogoSorter extends Sorter {
 			display.updateDisplay();
 			sort(array, display);
 		}
+	order = true;
 
 	}
 

@@ -23,10 +23,12 @@ public class _01_BinarySearch {
 			if (array[mid] > value) {
 				return binarySearch(array, start, mid - 1, value);
 			}
-			return binarySearch(array, start, mid + 1, value);
+			return binarySearch(array, mid+1, end , value);
 		}
 
-		return -1; // 3. create an integer called mid and set it equal
+		return -1;
+		
+		// 3. create an integer called mid and set it equal
 		// to the half way point between start and end
 
 		// 4. if the array element at mid is equal to value
