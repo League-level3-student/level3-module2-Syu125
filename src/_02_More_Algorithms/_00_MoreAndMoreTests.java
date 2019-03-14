@@ -49,6 +49,15 @@ public class _00_MoreAndMoreTests {
 		}
 		return false;
 	}
+	
+	public static boolean isCube(int cube) {
+		for(int i = 0; i < 3; i++) {
+			double c = Math.cbrt(cube);
+			
+		}
+		return false;
+		
+	}
 
 	@Test
 	public void PrimeTest() {
@@ -77,17 +86,17 @@ public class _00_MoreAndMoreTests {
 
 	}
 //
-//	@Test
-//	  public void CubeTest() {
-//
-//	    assertTrue(isCube(27));
-//	    assertTrue(isCube(216));
-//	    assertTrue(isCube(729));
-//	    assertTrue(isCube(1));
-//	    assertFalse(isCube(3));
-//	    assertFalse(isCube(22));
-//	    assertFalse(isCube(143));
-//
-//	  }
+	@Test
+	  public void CubeTest() {
+
+	    assertTrue(isCube(27));
+	    assertTrue(isCube(216));
+	    assertTrue(isCube(729));
+	    assertTrue(isCube(1));
+	    assertFalse(isCube(3));
+	    assertFalse(isCube(22));
+	    assertFalse(isCube(143));
+
+	  }
 
 }
