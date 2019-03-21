@@ -1,5 +1,6 @@
 package _02_More_Algorithms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -65,29 +66,40 @@ public class Algorithms {
 		double order = 0.0;
 		int num = 0;
 		for (int i = 0; i < results.size(); i++) {
-			for (int j = 0; j < results.size(); j++) {
-				if (order > results.get(j)) {
-					order = results.get(i);
+			for (int j = results.size(); j > 0; j--) {
+
+				if (order < results.get(j)) {
+					order = results.get(j);
 					num = j;
 				}
+
 			}
+			results.remove(num);
 			score.add(results.get(num));
-			
 		}
 		return score;
 	}
 
-	public static String[] sortDNA(List<String> sequence) {
-		int letters = 0;
-		String[] ordered;
-		for (int i = 0; i < sequence.size(); i++) {
-			for(int j = 0; j < sequence.size(); j ++) {
-			if (sequence.get(i).toCharArray().length > letters) {
-			}
-			
-		}
-		}
-		return null;
+	public static ArrayList<String> sortDNA(List<String> sequence) {
+		int length = 30;
+		int index = 0;
+		int size = sequence.size();
 
+		ArrayList<String>ordered = new ArrayList<String>();
+		//for (int j = size-1; j >=0; j--) {
+			for (int i = size-1; i >= 0; i--) {
+				if (length > sequence.get(i).length()) {
+					length = sequence.get(i).length();
+					index = i;
+				}
+			}
+			ordered.add(sequence.get(index));
+			System.out.println(size);
+		sequence.remove(index);
+			
+	//	}
+	//	List<String>result = Arrays
+		
+		return ordered;
 	}
 }

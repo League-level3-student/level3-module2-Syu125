@@ -41,20 +41,19 @@ public class _00_MoreAndMoreTests {
 	}
 
 	public static boolean isSquare(int full) {
-		for (int i = 0; i < full; i++) {
 			double srt = Math.sqrt(full);
 			if (full % srt == 0) {
 				return true;
 			}
-		}
 		return false;
 	}
 	
 	public static boolean isCube(int cube) {
-		for(int i = 0; i < 3; i++) {
 			double c = Math.cbrt(cube);
-			
-		}
+			if(cube % c == 0) {
+				return true;
+			}
+		
 		return false;
 		
 	}
