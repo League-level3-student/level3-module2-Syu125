@@ -62,44 +62,42 @@ public class Algorithms {
 	}
 
 	public static List<Double> sortScores(List<Double> results) {
-		List<Double> score = Arrays.asList();
-		double order = 0.0;
-		int num = 0;
-		for (int i = 0; i < results.size(); i++) {
-			for (int j = results.size(); j > 0; j--) {
-
-				if (order < results.get(j)) {
-					order = results.get(j);
-					num = j;
+	for(int i = 0; i < results.size(); i ++) {
+			for(int j = 0; j < results.size(); j++) {
+				if(results.get(i)< results.get(j)) {
+					Double temp = results.get(i);
+					results.set(i, results.get(j));
+					results.set(j, temp);
 				}
-
 			}
-			results.remove(num);
-			score.add(results.get(num));
 		}
-		return score;
+
+		return results;
 	}
 
-	public static ArrayList<String> sortDNA(List<String> sequence) {
-		int length = 30;
-		int index = 0;
-		int size = sequence.size();
-
-		ArrayList<String>ordered = new ArrayList<String>();
-		//for (int j = size-1; j >=0; j--) {
-			for (int i = size-1; i >= 0; i--) {
-				if (length > sequence.get(i).length()) {
-					length = sequence.get(i).length();
-					index = i;
+	public static List<String> sortDNA(List<String> sequence) {
+		for(int i = 0; i < sequence.size(); i ++) {
+			for(int j = 0; j < sequence.size(); j++) {
+				if(sequence.get(i).length()< sequence.get(j).length()) {
+					String temp = sequence.get(i);
+					sequence.set(i, sequence.get(j));
+					sequence.set(j, temp);
 				}
 			}
-			ordered.add(sequence.get(index));
-			System.out.println(size);
-		sequence.remove(index);
-			
-	//	}
-	//	List<String>result = Arrays
-		
-		return ordered;
+		}
+
+		return sequence;
+	}
+	public static List<String> sortWords(List<String> words){
+		for(int i = 0; i < words.size(); i ++) {
+			for(int j = 0; j < words.size();j++) {
+				if(words.get(i).compareTo(words.get(j))<0) {
+					String temp = words.get(i);
+					words.set(i, words.get(j));
+					words.set(j, temp);
+				}
+			}
+		}
+		return words;
 	}
 }
